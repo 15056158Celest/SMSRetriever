@@ -122,7 +122,8 @@ public class SecondFragment extends Fragment {
                         new String[]{"jason_lim@rp.edu.sg"});
                 email.putExtra(Intent.EXTRA_SUBJECT,
                         "Test Email from C347");
-                email.putExtra(Intent.EXTRA_TEXT, "");
+                email.putExtra(Intent.EXTRA_TEXT,
+                        tvFrag2.getText());
                 // This MIME type indicates email
                 email.setType("message/rfc822");
                 // createChooser shows user a list of app that can handle
