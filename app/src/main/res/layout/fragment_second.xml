@@ -17,14 +17,8 @@
             android:layout_height="wrap_content"
             android:text="Only SMS with this word"
             android:textColor="@android:color/black"
-            android:textSize="18dp" />
+            android:textSize="16dp" />
 
-        <TextView
-            android:id="@+id/tvFirst"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="First Word:"
-            android:textColor="@android:color/black"/>
 
         <EditText
             android:id="@+id/etFragFirstWord"
@@ -33,19 +27,6 @@
             android:ems="10"
             android:inputType="textPersonName" />
 
-        <TextView
-            android:id="@+id/tvSecond"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Second Word:"
-            android:textColor="@android:color/black"/>
-
-        <EditText
-            android:id="@+id/etFragSecondWord"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="textPersonName" />
 
 
         <LinearLayout

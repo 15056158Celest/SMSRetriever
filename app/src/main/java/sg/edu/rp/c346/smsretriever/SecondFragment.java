@@ -28,7 +28,7 @@ import org.w3c.dom.Text;
  */
 public class SecondFragment extends Fragment {
     Button btnFrag2, btnEmail2;
-    EditText etFragFirstWord, etFragSecondWord;
+    EditText etFragFirstWord;
     TextView tvFrag2;
 
 
@@ -44,7 +44,6 @@ public class SecondFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_second, container, false);
         btnFrag2 = (Button) view.findViewById(R.id.btnAddTextFrag2);
         etFragFirstWord = (EditText) view.findViewById(R.id.etFragFirstWord);
-        etFragSecondWord = (EditText) view.findViewById(R.id.etFragSecondWord);
         tvFrag2 = (TextView) view.findViewById(R.id.tvFragResult2);
         btnEmail2 = (Button) view.findViewById(R.id.btnEmailFrag2);
 
@@ -64,22 +63,10 @@ public class SecondFragment extends Fragment {
 
                 // Create all messages URI
                 Uri uri = Uri.parse("content://sms");
-                // The columns we want
-                //  date is when the message took place
-                //  address is the number of the other party
-                //  body is the message content
-                //  type 1 is received, type 2 sent
                 String[] reqCols = new String[]{"date", "address", "body", "type"};
-
-                // Get Content Resolver object from which to
-                //  query the content provider
                 ContentResolver cr = getActivity().getContentResolver();
-
-                // The filter String
                 String filter="body LIKE ? OR body LIKE ?";
-                // The matches for the ?
-
-                String[] filterArgs = {"%" + etFragFirstWord.getText().toString() + "%", "%" + etFragSecondWord.getText().toString() + "%"};
+                String[] filterArgs = {"%" + etFragFirstWord.getText().toString() + "%"};
                 // Fetch SMS Message from Built-in Content Provider
 
                 Cursor cursor = cr.query(uri, reqCols, filter, filterArgs, null);

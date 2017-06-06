@@ -66,22 +66,12 @@ public class FirstFragment extends Fragment {
 
                 // Create all messages URI
                 Uri uri = Uri.parse("content://sms");
-                // The columns we want
-                //  date is when the message took place
-                //  address is the number of the other party
-                //  body is the message content
-                //  type 1 is received, type 2 sent
                 String[] reqCols = new String[]{"date", "address", "body", "type"};
-
-                // Get Content Resolver object from which to
-                //  query the content provider
                 ContentResolver cr = getActivity().getContentResolver();
-
-                // The filter String
                 String filter="address LIKE ?";
                 // The matches for the ?
                 String[] filterArgs = {"%" + etFrag1.getText().toString() + "%"};
-                // Fetch SMS Message from Built-in Content Provider
+
 
                 Cursor cursor = cr.query(uri, reqCols, filter, filterArgs, null);
 
